@@ -16,7 +16,7 @@ Execute `via the node.js engine`
     node.js is runtime
 
 ```js
-javascript is code {MD046:18}
+javascript is code {MD046:-1}
 node.js is runtime
 ```
 
@@ -41,3 +41,17 @@ text `javascript` text JavaScript text `javascript` text
 
 text javascript text `javascript` text {MD044}
 text `javascript` text javascript text {MD044}
+
+<!-- markdownlint-configure-file {
+  "proper-names": {
+    "names": [
+      "Internet Explorer",
+      "markdownlint",
+      "JavaScript",
+      "Node.js",
+      "GitHub",
+      "npm"
+    ],
+    "code_blocks": false
+  }
+} -->

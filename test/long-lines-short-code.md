@@ -23,3 +23,10 @@ Text
 ```text
 Code code code code code code code code {MD013}
 ```
+
+<!-- markdownlint-configure-file {
+  "line-length": {
+    "code_block_line_length": 30
+  },
+  "code-block-style": false
+} -->

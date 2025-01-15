@@ -12,13 +12,13 @@ Text
 
 Text
 
-  * Item {MD006} {MD007}
+  * Item {MD007}
     * Item {MD007}
     * Item {MD007}
       * Item {MD007}
     * Item {MD007}
-  * Item {MD006} {MD007}
-  * Item {MD006} {MD007}
+  * Item {MD007}
+  * Item {MD007}
 
 Text
 
@@ -27,7 +27,7 @@ Text
 
 Text
 
-  * Item {MD006} {MD007}
+  * Item {MD007}
     * Item {MD007}
 
 Text
@@ -38,9 +38,9 @@ Text
 
 Text
 
- * Item {MD006} {MD007}
- * Item {MD006} {MD007}
- * Item {MD006} {MD007}
+ * Item {MD007}
+ * Item {MD007}
+ * Item {MD007}
 
 Text
 
@@ -52,8 +52,8 @@ Text
 
 Text
 
-  * Item {MD006} {MD007}
+  * Item {MD007}
 
-  * Item {MD006} {MD007}
+  * Item {MD007}
 
-  * Item {MD006} {MD007}
+  * Item {MD007}

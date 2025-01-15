@@ -1,11 +1,11 @@
-## Heading 1 {MD002} {MD041}
+## Heading 1 {MD041:1}
 
-#### Heading 2 {MD001}
+#### Heading 2 {MD001:3}
 
 # Heading 3 {MD003} {MD043} #
 
 * list {MD032}
- +  list {MD004} {MD006} {MD007} {MD030} {MD032}
+ +  list {MD004} {MD007} {MD030} {MD032}
 
 * list
    * list {MD007}
@@ -35,7 +35,7 @@ long line long line long line long line long line long line long line long line 
 # Heading 8
 
 {MD024:35}
-Note: Can not break MD025 and MD002 in the same file
+Note: Can not break MD025 and MD041 in the same file
 
  # Heading 9 {MD023} {MD026}.
 
@@ -92,5 +92,49 @@ Emphasis *with* different style {MD049}
 Strong __with__ underscore style
 
 Strong **with** different style {MD050}
+
+[Missing link fragment](#missing) {MD051}
+
+[Missing link][label] {MD052}
+
+[unused]: link-destination
+{MD053:100}
+
+[text][url] {MD054}
+
+<!-- markdownlint-disable-next-line MD053 -->
+[url]: https://example.com/page
+
+| table  | header |
+|--------|--------|
+ {MD055} | cell   |
+
+| table   | header |
+|---------|--------|
+| {MD056} |
+
+Text
+| table {MD058} |
+|-------|
+| cell  {MD058} |
+> Blockquote
+
+<!-- markdownlint-configure-file {
+  "required-headings": {
+    "headings": [
+      "## Heading 1 {MD041:1}",
+      "#### Heading 2 {MD001:3}",
+      "# Broken"
+    ]
+  },
+  "proper-names": {
+    "names": [
+      "markdownlint"
+    ]
+  },
+  "link-image-style": {
+    "full": false
+  }
+} -->
 
 EOF {MD047}

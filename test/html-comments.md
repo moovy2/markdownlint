@@ -19,9 +19,9 @@
 *comment *
 *comment * -->
 
-<!--> *{MD037} * -->
+<!--> *text * -->
 
-<!---> *{MD037} * -->
+<!---> *text * -->
 
 <!-- *comment * --->
 
@@ -52,14 +52,8 @@ t<!--> *{MD037} * -->
 
 t<!---> *{MD037} * -->
 
-t<!-- *{MD037} * --->
+t<!-- *comment * --->
 
-t<!-- -- *{MD037} * -->
+t<!-- -- *comment * -->
 
-t<!-- *{MD037} * -- -->
-
-## Notes
-
-It's important that the rule used above is one that calls
-`helpers.forEachLine` so `markdown-it` doesn't ignore any
-incorrectly-remaining comment blocks.
+t<!-- *comment * -- -->

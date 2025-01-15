@@ -9,3 +9,11 @@
 ##### Five
 
 ###### SiX
+
+<!-- markdownlint-configure-file {
+  "required-headings": {
+    "headings": [
+      "*"
+    ]
+  }
+} -->

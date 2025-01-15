@@ -24,7 +24,7 @@ This long line includes a simple [reference][label] link and is long enough to v
 
 [label]: https://example.org "Title for a link reference that is itself long enough to violate the rule"
 
-[Link to broken label][notlabel]
+[Link to broken label][notlabel] {MD052}
 
 [notlabel\]: notlink "Invalid syntax for a link label because the right bracket is backslash-escaped {MD013}"
 
@@ -59,3 +59,28 @@ _**[This long line is comprised of an emphasized and bolded link {MD049}](https:
 **![Reference style for long line image which is itself an example of a long line with content][image]**
 
 [image]: https://example.com "Title text for long line image example using reference style for image details"
+
+<!--
+Long lines inside HTML comments should also produce a violation of the line-length rule. {MD013}
+-->
+
+<!--
+Long lines inside HTML comments should also produce a violation of the line-length rule. {MD013}
+Long lines inside HTML comments should also produce a violation of the line-length rule. {MD013}
+-->
+
+<!-- Long lines inside HTML comments should also produce a violation of the line-length rule. {MD013} -->
+
+Long lines inside HTML comments should also <!-- produce a violation of the line-length rule. {MD013} -->
+
+<https://example.com/long-line-comprised-entirely-of-an-autolink-long-line-comprised-entirely-of-an-autolink>
+
+https://example.com/long-line-comprised-entirely-of-a-bare-link-long-line-comprised-entirely-of-a-bare-link
+
+Long <https://example.com/line-comprised-mostly-of-an-autolink-long-line-comprised-mostly-of-an-autolink> {MD013}
+
+Long https://example.com/long-line-comprised-mostly-of-a-bare-link-long-line-comprised-mostly-of-a-bare-link {MD013}
+
+<!-- markdownlint-configure-file {
+  "no-bare-urls": false
+} -->

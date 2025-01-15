@@ -4,3 +4,9 @@
 
 Heading 3
 ---------
+
+<!-- markdownlint-configure-file {
+  "heading-style": {
+    "style": "setext"
+  }
+} -->

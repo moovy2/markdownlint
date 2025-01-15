@@ -40,7 +40,7 @@ Code in `javascript` {MD044}
 
 Execute `via the node.js engine` {MD044}
 
-HTML <u>javascript</u> {MD033} {MD044}
+HTML <u>javascript</u> {MD044}
 
 * Use NPM {MD044}
 
@@ -49,12 +49,16 @@ HTML <u>javascript</u> {MD033} {MD044}
     javascript is code {MD044}
     node.js is runtime {MD044}
 
-```js
-javascript is code {MD044} {MD046:52}
+```javascript
+javascript is code {MD044} {MD046:-1}
 node.js is runtime {MD044}
 ```
 
 Upload the code (to github) {MD044}
+
+Image of ![github](https://github.com/). {MD044}
+
+Image of ![GitHub](https://github.com/).
 
 Link to [github](https://github.com/). {MD044}
 
@@ -79,3 +83,57 @@ code`
 
 `javascript {MD044}
 code`
+
+Text referencing multiplecase name.
+Text referencing MultipleCase name.
+Text referencing MULTIPLECASE name. {MD044}
+Text referencing mULTIPLEcASE name.
+
+<img src="img/javascript/image.png" alt="Description" error="{MD044}">
+
+<script type="text/javascript">
+{MD044:-1}
+javascript {MD044}
+</script>
+
+<a error="{MD044}" id="javascript"/>
+
+<!-- javascript {MD044} -->
+
+<!--
+javascript {MD044}
+-->
+
+<a href="https://example.org">
+
+<div><a href="https://example.org"></div>
+
+<div>
+  <a href="https://example.org">
+</div>
+
+<div>
+  javascript {MD044}
+  <a href="https://example.org">
+  javascript {MD044}
+</div>
+
+{MD044:-14} {MD044:-12} {MD044:-9} {MD044:-4}
+
+<!-- markdownlint-configure-file {
+  "no-inline-html": false,
+  "proper-names": {
+    "names": [
+      "HTTPS",
+      "Internet Explorer",
+      "markdownlint",
+      "multiplecase",
+      "mULTIPLEcASE",
+      "MultipleCase",
+      "JavaScript",
+      "Node.js",
+      "GitHub",
+      "npm"
+    ]
+  }
+} -->

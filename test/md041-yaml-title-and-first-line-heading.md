@@ -5,3 +5,9 @@ title: "First level heading"
 ---
 
 ## Second level heading
+
+<!-- markdownlint-configure-file {
+  "first-line-heading": {
+    "level": 2
+  }
+} -->

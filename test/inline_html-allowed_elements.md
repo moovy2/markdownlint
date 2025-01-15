@@ -53,3 +53,14 @@ This is not allowed.
 <Hr/>
 <Br/> {MD033}
 </P>
+
+<!-- markdownlint-configure-file {
+  "no-inline-html": {
+    "allowed_elements": [
+      "h1",
+      "h3",
+      "HR",
+      "p"
+    ]
+  }
+} -->

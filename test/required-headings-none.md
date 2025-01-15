@@ -3,3 +3,9 @@
 ## Two
 
 ### Three
+
+<!-- markdownlint-configure-file {
+  "required-headings": {
+    "headings": []
+  }
+} -->

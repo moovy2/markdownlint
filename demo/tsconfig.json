@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "allowJs": true,
-    "outDir": "unused"
-  },
-  "include": [
-    "../lib/*.js"
-  ]
-}

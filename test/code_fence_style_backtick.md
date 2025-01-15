@@ -19,3 +19,9 @@ This is fine
 This is not {MD048:17}
 ```
 ~~~
+
+<!-- markdownlint-configure-file {
+  "code-fence-style": {
+    "style": "backtick"
+  }
+} -->

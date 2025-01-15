@@ -24,9 +24,15 @@
 
 [text][ frag ] {MD042}
 
+[frag][] {MD042}
+
+[frag] {MD042}
+
 [frag]: #
 
 ## Non-empty links
+
+### frag
 
 [text](link)
 

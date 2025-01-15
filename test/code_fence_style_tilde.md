@@ -19,3 +19,9 @@ This is not fine {MD048:11}
 This is
 ```
 ~~~
+
+<!-- markdownlint-configure-file {
+  "code-fence-style": {
+    "style": "tilde"
+  }
+} -->

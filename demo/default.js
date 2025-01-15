@@ -1,6 +1,11 @@
 "use strict";
 
 (function main() {
+  // Dependencies
+  var markdownit = globalThis.markdownit;
+  var markdownlint = globalThis.markdownlint;
+  var micromark = markdownlint;
+
   // DOM elements
   var markdown = document.getElementById("markdown");
   var markup = document.getElementById("markup");
@@ -11,7 +16,6 @@
   var copyLink = document.getElementById("copyLink");
 
   // Variables
-  var markdownit = window.markdownit({ "html": true });
   var newLineRe = /\r\n|\r|\n/;
   var hashPrefix = "%m";
   var allLintErrors = [];
@@ -27,12 +31,66 @@
       .replace(/>/g, "&gt;");
   }
 
+  // Renders directive metadata
+  function handleDirective(directive) {
+    const content = directive.content;
+    delete directive.content;
+    if (content) {
+      this.tag("<blockquote>");
+    }
+    this.tag("<code>");
+    this.raw(this.encode(JSON.stringify(directive)));
+    this.tag("</code>");
+    this.raw(content);
+    if (content) {
+      this.tag("</blockquote>");
+    }
+  }
+
+  // Renders Markdown to HTML
+  function render(markdown) {
+    const match = /^\?renderer=([a-z-]+)$/.exec(globalThis.location.search);
+    const renderer = match ? match[1] : "micromark";
+    if (renderer === "markdown-it") {
+      return markdownit({ "html": true }).render(markdown);
+    } else if (renderer === "micromark") {
+      const parseOptions = {
+        "extensions": [
+          micromark.directive(),
+          micromark.gfmAutolinkLiteral(),
+          micromark.gfmFootnote(),
+          micromark.gfmTable(),
+          micromark.math()
+        ]
+      };
+      const context = micromark.parse(parseOptions);
+      const chunks = micromark.preprocess()(markdown, undefined, true);
+      const events = micromark.postprocess(context.document().write(chunks));
+      const compileOptions = {
+        "allowDangerousHtml": true,
+        "htmlExtensions": [
+          micromark.directiveHtml({ "*": handleDirective }),
+          micromark.gfmAutolinkLiteralHtml(),
+          micromark.gfmFootnoteHtml(),
+          micromark.gfmTableHtml(),
+          micromark.mathHtml()
+        ]
+      };
+      try {
+        return micromark.compile(compileOptions)(events);
+      } catch (error) {
+        return `[Exception: "${error}"]`;
+      }
+    }
+    return `[Unsupported renderer "${renderer}"]`;
+  }
+
   // Handle input
   function onMarkdownInput() {
     // Markdown
     var content = markdown.value;
     // Markup
-    markup.innerHTML = markdownit.render(content);
+    markup.innerHTML = render(content);
     // Numbered
     var lines = content.split(newLineRe);
     var padding = lines.length.toString().replace(/\d/g, " ");
@@ -52,10 +110,9 @@
       "config": {
         "MD013": false
       },
-      "handleRuleFailures": true,
-      "resultVersion": 3
+      "handleRuleFailures": true
     };
-    allLintErrors = window.markdownlint.sync(options).content;
+    allLintErrors = markdownlint.lintSync(options).content;
     violations.innerHTML = allLintErrors.map(function mapResult(result) {
       var ruleName = result.ruleNames.slice(0, 2).join(" / ");
       return "<em><a href='#line' target='" + result.lineNumber + "'>" +
@@ -73,9 +130,9 @@
             "\"</span>]" :
           "") +
         (result.fixInfo ?
-          " [<a href='#fix' target='" +
+          " [<a href='#fix' target=\"" +
             encodeURIComponent(JSON.stringify(result)) +
-            "' class='detail'>Fix</a>]" :
+            "\" class='detail'>Fix</a>]" :
           "");
     }).join("<br/>");
   }
@@ -90,12 +147,10 @@
       onMarkdownInput();
     } else {
       // Update from File object
-      var reader = new FileReader();
-      reader.onload = function onload(e) {
-        markdown.value = e.target.result;
+      source.text().then((text) => {
+        markdown.value = text;
         onMarkdownInput();
-      };
-      reader.readAsText(source);
+      });
     }
   }
 
@@ -127,8 +182,7 @@
         var errors = e.shiftKey ?
           allLintErrors :
           [ JSON.parse(decodeURIComponent(e.target.target)) ];
-        var fixed =
-          window.markdownlintRuleHelpers.applyFixes(markdown.value, errors);
+        var fixed = markdownlint.applyFixes(markdown.value, errors);
         markdown.value = fixed;
         onMarkdownInput();
         e.preventDefault();
@@ -155,9 +209,9 @@
 
   // Updates the URL hash and copies the URL to the clipboard
   function onCopyLinkClick(e) {
-    window.location.hash = encodeURIComponent(hashPrefix + markdown.value);
+    globalThis.location.hash = encodeURIComponent(hashPrefix + markdown.value);
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(window.location).then(noop, noop);
+      navigator.clipboard.writeText(globalThis.location).then(noop, noop);
     } else {
       /* eslint-disable-next-line no-alert */
       alert("Document URL updated, select and copy it now.");
@@ -166,8 +220,8 @@
   }
 
   // Show library version
-  document.getElementById("version").textContent =
-    "(v" + window.markdownlint.getVersion() + ")";
+  var version = markdownlint.getVersion();
+  document.getElementById("version").textContent = "(v" + version + ")";
 
   // Add event listeners
   document.body.addEventListener("dragover", onDragOver);
@@ -177,7 +231,6 @@
   violations.addEventListener("click", onViolationClick, true);
   copyLink.addEventListener("click", onCopyLinkClick);
 
-  /* eslint-disable max-len */
   markdown.value = [
     "## Introduction",
     "",
@@ -190,8 +243,7 @@
     "Content gets parsed and displayed in the upper-right box; rule violations (if any) show up in the lower-right box.",
     "Click a violation for information about it or click its line number to highlighted it in the lower-left box.",
     "",
-    "> *Note*: [All rules](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md) are enabled except [MD013/line-length](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md013).",
-    "> ([MD002/first-heading-h1](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md002) and [MD006/ul-start-left](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md006) are deprecated.)",
+    "> *Note*: [All rules](https://github.com/DavidAnson/markdownlint/blob/v" + version + "/doc/Rules.md) are enabled except [MD013/line-length](https://github.com/DavidAnson/markdownlint/blob/v" + version + "/doc/md013.md).",
     "",
     "",
     "#### Resources",
@@ -205,17 +257,15 @@
     "[`markdownlint/Ruby`](https://github.com/markdownlint/markdownlint) for the inspiration and [`markdown-it`](https://github.com/markdown-it/markdown-it) for the parser and interactive demo idea!",
     ""
   ].join("\n");
-  /* eslint-enable max-len */
 
   // Update Markdown from hash (if present)
-  if (window.location.hash) {
+  if (globalThis.location.hash) {
     try {
-      var decodedHash = decodeURIComponent(window.location.hash.substring(1));
+      var decodedHash = decodeURIComponent(globalThis.location.hash.substring(1));
       if (hashPrefix === decodedHash.substring(0, hashPrefix.length)) {
         markdown.value = decodedHash.substring(hashPrefix.length);
       }
-      /* eslint-disable-next-line unicorn/prefer-optional-catch-binding */
-    } catch (error) {
+    } catch {
       // Invalid
     }
   }
@@ -224,8 +274,7 @@
   try {
     /* eslint-disable-next-line no-new */
     new URL("https://example.com/");
-    /* eslint-disable-next-line unicorn/prefer-optional-catch-binding */
-  } catch (error) {
+  } catch {
     markdown.value = [
       "# Sorry",
       "",

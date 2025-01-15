@@ -57,3 +57,9 @@ Text
       fence
       ```
 1. Item
+
+<!-- markdownlint-configure-file {
+  "blanks-around-fences": {
+    "list_items": false
+  }
+} -->

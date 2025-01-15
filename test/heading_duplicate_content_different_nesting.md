@@ -9,3 +9,9 @@
 ## 1.0.0
 
 ### Bug fixes
+
+<!-- markdownlint-configure-file {
+  "no-duplicate-heading": {
+    "siblings_only": true
+  }
+} -->

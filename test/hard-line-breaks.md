@@ -53,6 +53,23 @@ Text text
 text text
 text  
 
+Text text
+text `code
+span` text  
+
+Text text
+text `code  
+span code  
+span` text  
+
+Text text  
+
+Text `code span` text  
+
+Text text  
+`code span`  
+text text  
+
 {MD009:9}
 {MD009:24}
 {MD009:32}
@@ -62,3 +79,16 @@ text
 {MD009:43}
 {MD009:48}
 {MD009:54}
+{MD009:58}
+{MD009:61}
+{MD009:62}
+{MD009:63}
+{MD009:65}
+{MD009:67}
+{MD009:71}
+
+<!-- markdownlint-configure-file {
+  "no-trailing-spaces": {
+    "strict": true
+  }
+} -->

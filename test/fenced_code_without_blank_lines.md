@@ -37,6 +37,11 @@ code
 
 text
 
+<!-- markdownlint-configure-file {
+  "fenced-code-language": false,
+  "first-line-heading": false
+} -->
+
 ```
-code at end of file without newline {MD047:42}
+code at end of file without newline {MD047:47}
 ```

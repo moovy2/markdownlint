@@ -4,3 +4,9 @@
 }
 
 Some plain text here.
+
+<!-- markdownlint-configure-file {
+  "first-line-heading": {
+    "front_matter_title": "^\\s*\"alternate\"\\s*:"
+  }
+} -->

@@ -3,32 +3,47 @@ name: CI
 on:
   pull_request:
   push:
+    branches-ignore:
+      - 'dependabot/**'
   schedule:
     - cron: '30 12 * * *'
   workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: false
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [ 18, 20, 22, 23 ]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: npm install --no-package-lock
-    - name: Run All Validations
-      if: ${{ matrix.node-version != '12.x' }}
+    - name: Run CI Tests
       run: npm run ci
-    - name: Run Tests Only
-      if: ${{ matrix.node-version == '12.x' }}
-      run: npm run test
+
+  pnpm:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use pnpm latest
+      uses: pnpm/action-setup@v4
+      with:
+        version: latest
+    - name: Use Node.js latest
+      uses: actions/setup-node@v4
+      with:
+        node-version: latest
+    - name: Install dependencies
+      run: pnpm install
+    - name: Run CI Tests
+      run: npm test

@@ -30,7 +30,45 @@ Text
 - Item
 - Item
   item
-  >  ## Quoted indented sub-heading in list {MD022} {MD023}
+  >  ## Quoted indented sub-heading in list {MD022} {MD023} {MD027}
 - Item
+
+Text
+
+> Text
+>
+> ## Heading One {MD022}
+> Text
+
+Text
+
+> Text
+> ## Heading Two {MD022}
+>
+> Text
+
+Text
+
+> Text
+> ## Heading Three {MD022}
+> Text
+
+Text
+
+> > Text
+> > ### Heading Four {MD022}
+> > Text
+
+Text
+
+> Text
+> > ### Heading Five {MD022}
+> > Text
+
+Text
+
+> > Text
+> > ### Heading Six {MD022}
+> Text
 
 Text

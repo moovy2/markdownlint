@@ -44,3 +44,9 @@ Text
 Text
 
 Text
+
+<!-- markdownlint-configure-file {
+  "no-multiple-blanks": {
+    "maximum": 3
+  }
+} -->

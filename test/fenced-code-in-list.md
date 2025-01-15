@@ -33,3 +33,9 @@
     ```javascript
     debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger; debugger;
     ```
+
+<!-- markdownlint-configure-file {
+  "line-length": {
+    "code_blocks": false
+  }
+} -->

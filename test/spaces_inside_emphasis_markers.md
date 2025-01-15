@@ -125,32 +125,51 @@ Uncommon scenarios from the CommonMark specification (and some variations):
 *in emph **strong***
 
 *** strong emph*** {MD037}
-*** strong** in emph* {MD037}
-*** emph* in strong** {MD037}
+
+*** strong** in emph* {possible MD037}
+
+*** emph* in strong** {possible MD037}
+
 ** in strong *emph*** {MD037}
 
 ***strong emph *** {MD037}
+
 ***strong** in emph * {MD037}
+
 ***emph* in strong ** {MD037}
-**in strong *emph *** {MD037}
-*in emph **strong *** {MD037}
+
+**in strong *emph *** {possible MD037}
+
+*in emph **strong *** {possible MD037}
 
 ** *strong emph*** {MD037}
+
 ** *strong** in emph* {MD037}
+
 ** *emph* in strong** {MD037}
+
 **in strong * emph*** (internal spaces are not detected)
+
 *in emph ** strong*** (internal spaces are not detected)
 
 ***strong emph* ** {MD037}
+
 ***strong ** in emph* (internal spaces are not detected)
+
 ***emph * in strong** (internal spaces are not detected)
+
 **in strong *emph* ** {MD037}
+
 *in emph **strong* ** {MD037}
 
 Text *emph***strong** text
+
 Text * emph***strong** text {MD037}
-Text *emph ***strong** text (internal spaces are not detected)
-Text *emph*** strong** text (internal spaces are not detected)
+
+Text *emph ***strong** text {MD037}
+
+Text *emph*** strong** text {MD037}
+
 Text *emph***strong ** text {MD037}
 
 ```markdown
@@ -357,3 +376,18 @@ some_snake_case_function() is _called_
 _~/.ssh/id_rsa_ and _emphasis_
 
 Partial *em*phasis of a *wo*rd.
+
+Emphasis <b>inside * HTML * content</b> {MD033} {MD037}
+
+<p> {MD033}
+Emphasis inside * HTML * content
+</p>
+
+Emphasis <p data="inside * attribute * content"></p> {MD033}
+
+Emphasis <img alt="inside * attribute * content"/> {MD033}
+
+Emphasis <p data="* attribute *">* HTML *</p> {MD033} {MD037}
+
+Embedded underscore is okay:
+Text _emphas_i_s_ text _emphasis_

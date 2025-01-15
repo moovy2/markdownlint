@@ -1,7 +1,14 @@
 {
-  "title": "Markdownlint configuration schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.37.4/schema/markdownlint-config-schema.json",
+  "title": "markdownlint configuration schema",
   "type": "object",
   "properties": {
+    "$schema": {
+      "description": "JSON Schema URI (expected by some editors)",
+      "type": "string",
+      "default": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.37.4/schema/markdownlint-config-schema.json"
+    },
     "default": {
       "description": "Default state for all rules",
       "type": "boolean",
@@ -15,76 +22,18 @@
       ],
       "default": null
     },
-    "$schema": {
-      "description": "JSON Schema URI (used by some editors)",
-      "type": "string",
-      "default": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json"
-    },
     "MD001": {
-      "description": "MD001/heading-increment/header-increment - Heading levels should only increment by one level at a time",
+      "description": "MD001/heading-increment : Heading levels should only increment by one level at a time : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md001.md",
       "type": "boolean",
       "default": true
     },
     "heading-increment": {
-      "description": "MD001/heading-increment/header-increment - Heading levels should only increment by one level at a time",
+      "description": "MD001/heading-increment : Heading levels should only increment by one level at a time : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md001.md",
       "type": "boolean",
       "default": true
-    },
-    "header-increment": {
-      "description": "MD001/heading-increment/header-increment - Heading levels should only increment by one level at a time",
-      "type": "boolean",
-      "default": true
-    },
-    "MD002": {
-      "description": "MD002/first-heading-h1/first-header-h1 - First heading should be a top-level heading",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "level": {
-          "description": "Heading level",
-          "type": "integer",
-          "default": 1
-        }
-      },
-      "additionalProperties": false
-    },
-    "first-heading-h1": {
-      "description": "MD002/first-heading-h1/first-header-h1 - First heading should be a top-level heading",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "level": {
-          "description": "Heading level",
-          "type": "integer",
-          "default": 1
-        }
-      },
-      "additionalProperties": false
-    },
-    "first-header-h1": {
-      "description": "MD002/first-heading-h1/first-header-h1 - First heading should be a top-level heading",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "level": {
-          "description": "Heading level",
-          "type": "integer",
-          "default": 1
-        }
-      },
-      "additionalProperties": false
     },
     "MD003": {
-      "description": "MD003/heading-style/header-style - Heading style",
+      "description": "MD003/heading-style : Heading style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md003.md",
       "type": [
         "boolean",
         "object"
@@ -108,31 +57,7 @@
       "additionalProperties": false
     },
     "heading-style": {
-      "description": "MD003/heading-style/header-style - Heading style",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "style": {
-          "description": "Heading style",
-          "type": "string",
-          "enum": [
-            "consistent",
-            "atx",
-            "atx_closed",
-            "setext",
-            "setext_with_atx",
-            "setext_with_atx_closed"
-          ],
-          "default": "consistent"
-        }
-      },
-      "additionalProperties": false
-    },
-    "header-style": {
-      "description": "MD003/heading-style/header-style - Heading style",
+      "description": "MD003/heading-style : Heading style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md003.md",
       "type": [
         "boolean",
         "object"
@@ -156,7 +81,7 @@
       "additionalProperties": false
     },
     "MD004": {
-      "description": "MD004/ul-style - Unordered list style",
+      "description": "MD004/ul-style : Unordered list style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md004.md",
       "type": [
         "boolean",
         "object"
@@ -179,7 +104,7 @@
       "additionalProperties": false
     },
     "ul-style": {
-      "description": "MD004/ul-style - Unordered list style",
+      "description": "MD004/ul-style : Unordered list style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md004.md",
       "type": [
         "boolean",
         "object"
@@ -202,27 +127,17 @@
       "additionalProperties": false
     },
     "MD005": {
-      "description": "MD005/list-indent - Inconsistent indentation for list items at the same level",
+      "description": "MD005/list-indent : Inconsistent indentation for list items at the same level : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md005.md",
       "type": "boolean",
       "default": true
     },
     "list-indent": {
-      "description": "MD005/list-indent - Inconsistent indentation for list items at the same level",
-      "type": "boolean",
-      "default": true
-    },
-    "MD006": {
-      "description": "MD006/ul-start-left - Consider starting bulleted lists at the beginning of the line",
-      "type": "boolean",
-      "default": true
-    },
-    "ul-start-left": {
-      "description": "MD006/ul-start-left - Consider starting bulleted lists at the beginning of the line",
+      "description": "MD005/list-indent : Inconsistent indentation for list items at the same level : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md005.md",
       "type": "boolean",
       "default": true
     },
     "MD007": {
-      "description": "MD007/ul-indent - Unordered list indentation",
+      "description": "MD007/ul-indent : Unordered list indentation : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md007.md",
       "type": [
         "boolean",
         "object"
@@ -232,6 +147,7 @@
         "indent": {
           "description": "Spaces for indent",
           "type": "integer",
+          "minimum": 1,
           "default": 2
         },
         "start_indented": {
@@ -242,13 +158,14 @@
         "start_indent": {
           "description": "Spaces for first level indent (when start_indented is set)",
           "type": "integer",
+          "minimum": 1,
           "default": 2
         }
       },
       "additionalProperties": false
     },
     "ul-indent": {
-      "description": "MD007/ul-indent - Unordered list indentation",
+      "description": "MD007/ul-indent : Unordered list indentation : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md007.md",
       "type": [
         "boolean",
         "object"
@@ -258,6 +175,7 @@
         "indent": {
           "description": "Spaces for indent",
           "type": "integer",
+          "minimum": 1,
           "default": 2
         },
         "start_indented": {
@@ -268,13 +186,14 @@
         "start_indent": {
           "description": "Spaces for first level indent (when start_indented is set)",
           "type": "integer",
+          "minimum": 1,
           "default": 2
         }
       },
       "additionalProperties": false
     },
     "MD009": {
-      "description": "MD009/no-trailing-spaces - Trailing spaces",
+      "description": "MD009/no-trailing-spaces : Trailing spaces : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md009.md",
       "type": [
         "boolean",
         "object"
@@ -284,6 +203,7 @@
         "br_spaces": {
           "description": "Spaces for line break",
           "type": "integer",
+          "minimum": 0,
           "default": 2
         },
         "list_item_empty_lines": {
@@ -300,7 +220,7 @@
       "additionalProperties": false
     },
     "no-trailing-spaces": {
-      "description": "MD009/no-trailing-spaces - Trailing spaces",
+      "description": "MD009/no-trailing-spaces : Trailing spaces : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md009.md",
       "type": [
         "boolean",
         "object"
@@ -310,6 +230,7 @@
         "br_spaces": {
           "description": "Spaces for line break",
           "type": "integer",
+          "minimum": 0,
           "default": 2
         },
         "list_item_empty_lines": {
@@ -326,7 +247,7 @@
       "additionalProperties": false
     },
     "MD010": {
-      "description": "MD010/no-hard-tabs - Hard tabs",
+      "description": "MD010/no-hard-tabs : Hard tabs : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md010.md",
       "type": [
         "boolean",
         "object"
@@ -338,16 +259,25 @@
           "type": "boolean",
           "default": true
         },
+        "ignore_code_languages": {
+          "description": "Fenced code languages to ignore",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
         "spaces_per_tab": {
           "description": "Number of spaces for each hard tab",
-          "type": "number",
+          "type": "integer",
+          "minimum": 0,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "no-hard-tabs": {
-      "description": "MD010/no-hard-tabs - Hard tabs",
+      "description": "MD010/no-hard-tabs : Hard tabs : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md010.md",
       "type": [
         "boolean",
         "object"
@@ -359,26 +289,35 @@
           "type": "boolean",
           "default": true
         },
+        "ignore_code_languages": {
+          "description": "Fenced code languages to ignore",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
         "spaces_per_tab": {
           "description": "Number of spaces for each hard tab",
-          "type": "number",
+          "type": "integer",
+          "minimum": 0,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "MD011": {
-      "description": "MD011/no-reversed-links - Reversed link syntax",
+      "description": "MD011/no-reversed-links : Reversed link syntax : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md011.md",
       "type": "boolean",
       "default": true
     },
     "no-reversed-links": {
-      "description": "MD011/no-reversed-links - Reversed link syntax",
+      "description": "MD011/no-reversed-links : Reversed link syntax : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md011.md",
       "type": "boolean",
       "default": true
     },
     "MD012": {
-      "description": "MD012/no-multiple-blanks - Multiple consecutive blank lines",
+      "description": "MD012/no-multiple-blanks : Multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md012.md",
       "type": [
         "boolean",
         "object"
@@ -388,13 +327,14 @@
         "maximum": {
           "description": "Consecutive blank lines",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "no-multiple-blanks": {
-      "description": "MD012/no-multiple-blanks - Multiple consecutive blank lines",
+      "description": "MD012/no-multiple-blanks : Multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md012.md",
       "type": [
         "boolean",
         "object"
@@ -404,13 +344,14 @@
         "maximum": {
           "description": "Consecutive blank lines",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "MD013": {
-      "description": "MD013/line-length - Line length",
+      "description": "MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md013.md",
       "type": [
         "boolean",
         "object"
@@ -420,16 +361,19 @@
         "line_length": {
           "description": "Number of characters",
           "type": "integer",
+          "minimum": 1,
           "default": 80
         },
         "heading_line_length": {
           "description": "Number of characters for headings",
           "type": "integer",
+          "minimum": 1,
           "default": 80
         },
         "code_block_line_length": {
           "description": "Number of characters for code blocks",
           "type": "integer",
+          "minimum": 1,
           "default": 80
         },
         "code_blocks": {
@@ -443,11 +387,6 @@
           "default": true
         },
         "headings": {
-          "description": "Include headings",
-          "type": "boolean",
-          "default": true
-        },
-        "headers": {
           "description": "Include headings",
           "type": "boolean",
           "default": true
@@ -466,7 +405,7 @@
       "additionalProperties": false
     },
     "line-length": {
-      "description": "MD013/line-length - Line length",
+      "description": "MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md013.md",
       "type": [
         "boolean",
         "object"
@@ -476,16 +415,19 @@
         "line_length": {
           "description": "Number of characters",
           "type": "integer",
+          "minimum": 1,
           "default": 80
         },
         "heading_line_length": {
           "description": "Number of characters for headings",
           "type": "integer",
+          "minimum": 1,
           "default": 80
         },
         "code_block_line_length": {
           "description": "Number of characters for code blocks",
           "type": "integer",
+          "minimum": 1,
           "default": 80
         },
         "code_blocks": {
@@ -499,11 +441,6 @@
           "default": true
         },
         "headings": {
-          "description": "Include headings",
-          "type": "boolean",
-          "default": true
-        },
-        "headers": {
           "description": "Include headings",
           "type": "boolean",
           "default": true
@@ -522,57 +459,57 @@
       "additionalProperties": false
     },
     "MD014": {
-      "description": "MD014/commands-show-output - Dollar signs used before commands without showing output",
+      "description": "MD014/commands-show-output : Dollar signs used before commands without showing output : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md014.md",
       "type": "boolean",
       "default": true
     },
     "commands-show-output": {
-      "description": "MD014/commands-show-output - Dollar signs used before commands without showing output",
+      "description": "MD014/commands-show-output : Dollar signs used before commands without showing output : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md014.md",
       "type": "boolean",
       "default": true
     },
     "MD018": {
-      "description": "MD018/no-missing-space-atx - No space after hash on atx style heading",
+      "description": "MD018/no-missing-space-atx : No space after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md018.md",
       "type": "boolean",
       "default": true
     },
     "no-missing-space-atx": {
-      "description": "MD018/no-missing-space-atx - No space after hash on atx style heading",
+      "description": "MD018/no-missing-space-atx : No space after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md018.md",
       "type": "boolean",
       "default": true
     },
     "MD019": {
-      "description": "MD019/no-multiple-space-atx - Multiple spaces after hash on atx style heading",
+      "description": "MD019/no-multiple-space-atx : Multiple spaces after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md019.md",
       "type": "boolean",
       "default": true
     },
     "no-multiple-space-atx": {
-      "description": "MD019/no-multiple-space-atx - Multiple spaces after hash on atx style heading",
+      "description": "MD019/no-multiple-space-atx : Multiple spaces after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md019.md",
       "type": "boolean",
       "default": true
     },
     "MD020": {
-      "description": "MD020/no-missing-space-closed-atx - No space inside hashes on closed atx style heading",
+      "description": "MD020/no-missing-space-closed-atx : No space inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md020.md",
       "type": "boolean",
       "default": true
     },
     "no-missing-space-closed-atx": {
-      "description": "MD020/no-missing-space-closed-atx - No space inside hashes on closed atx style heading",
+      "description": "MD020/no-missing-space-closed-atx : No space inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md020.md",
       "type": "boolean",
       "default": true
     },
     "MD021": {
-      "description": "MD021/no-multiple-space-closed-atx - Multiple spaces inside hashes on closed atx style heading",
+      "description": "MD021/no-multiple-space-closed-atx : Multiple spaces inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md021.md",
       "type": "boolean",
       "default": true
     },
     "no-multiple-space-closed-atx": {
-      "description": "MD021/no-multiple-space-closed-atx - Multiple spaces inside hashes on closed atx style heading",
+      "description": "MD021/no-multiple-space-closed-atx : Multiple spaces inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md021.md",
       "type": "boolean",
       "default": true
     },
     "MD022": {
-      "description": "MD022/blanks-around-headings/blanks-around-headers - Headings should be surrounded by blank lines",
+      "description": "MD022/blanks-around-headings : Headings should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md022.md",
       "type": [
         "boolean",
         "object"
@@ -581,19 +518,33 @@
       "properties": {
         "lines_above": {
           "description": "Blank lines above heading",
-          "type": "integer",
+          "type": [
+            "integer",
+            "array"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "minimum": -1,
           "default": 1
         },
         "lines_below": {
           "description": "Blank lines below heading",
-          "type": "integer",
+          "type": [
+            "integer",
+            "array"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "minimum": -1,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "blanks-around-headings": {
-      "description": "MD022/blanks-around-headings/blanks-around-headers - Headings should be surrounded by blank lines",
+      "description": "MD022/blanks-around-headings : Headings should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md022.md",
       "type": [
         "boolean",
         "object"
@@ -602,66 +553,49 @@
       "properties": {
         "lines_above": {
           "description": "Blank lines above heading",
-          "type": "integer",
+          "type": [
+            "integer",
+            "array"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "minimum": -1,
           "default": 1
         },
         "lines_below": {
           "description": "Blank lines below heading",
-          "type": "integer",
-          "default": 1
-        }
-      },
-      "additionalProperties": false
-    },
-    "blanks-around-headers": {
-      "description": "MD022/blanks-around-headings/blanks-around-headers - Headings should be surrounded by blank lines",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "lines_above": {
-          "description": "Blank lines above heading",
-          "type": "integer",
-          "default": 1
-        },
-        "lines_below": {
-          "description": "Blank lines below heading",
-          "type": "integer",
+          "type": [
+            "integer",
+            "array"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "minimum": -1,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "MD023": {
-      "description": "MD023/heading-start-left/header-start-left - Headings must start at the beginning of the line",
+      "description": "MD023/heading-start-left : Headings must start at the beginning of the line : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md023.md",
       "type": "boolean",
       "default": true
     },
     "heading-start-left": {
-      "description": "MD023/heading-start-left/header-start-left - Headings must start at the beginning of the line",
-      "type": "boolean",
-      "default": true
-    },
-    "header-start-left": {
-      "description": "MD023/heading-start-left/header-start-left - Headings must start at the beginning of the line",
+      "description": "MD023/heading-start-left : Headings must start at the beginning of the line : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md023.md",
       "type": "boolean",
       "default": true
     },
     "MD024": {
-      "description": "MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content",
+      "description": "MD024/no-duplicate-heading : Multiple headings with the same content : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md024.md",
       "type": [
         "boolean",
         "object"
       ],
       "default": true,
       "properties": {
-        "allow_different_nesting": {
-          "description": "Only check sibling headings",
-          "type": "boolean",
-          "default": false
-        },
         "siblings_only": {
           "description": "Only check sibling headings",
           "type": "boolean",
@@ -671,39 +605,13 @@
       "additionalProperties": false
     },
     "no-duplicate-heading": {
-      "description": "MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content",
+      "description": "MD024/no-duplicate-heading : Multiple headings with the same content : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md024.md",
       "type": [
         "boolean",
         "object"
       ],
       "default": true,
       "properties": {
-        "allow_different_nesting": {
-          "description": "Only check sibling headings",
-          "type": "boolean",
-          "default": false
-        },
-        "siblings_only": {
-          "description": "Only check sibling headings",
-          "type": "boolean",
-          "default": false
-        }
-      },
-      "additionalProperties": false
-    },
-    "no-duplicate-header": {
-      "description": "MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "allow_different_nesting": {
-          "description": "Only check sibling headings",
-          "type": "boolean",
-          "default": false
-        },
         "siblings_only": {
           "description": "Only check sibling headings",
           "type": "boolean",
@@ -713,7 +621,7 @@
       "additionalProperties": false
     },
     "MD025": {
-      "description": "MD025/single-title/single-h1 - Multiple top-level headings in the same document",
+      "description": "MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md025.md",
       "type": [
         "boolean",
         "object"
@@ -723,6 +631,8 @@
         "level": {
           "description": "Heading level",
           "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
           "default": 1
         },
         "front_matter_title": {
@@ -734,7 +644,7 @@
       "additionalProperties": false
     },
     "single-title": {
-      "description": "MD025/single-title/single-h1 - Multiple top-level headings in the same document",
+      "description": "MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md025.md",
       "type": [
         "boolean",
         "object"
@@ -744,6 +654,8 @@
         "level": {
           "description": "Heading level",
           "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
           "default": 1
         },
         "front_matter_title": {
@@ -755,7 +667,7 @@
       "additionalProperties": false
     },
     "single-h1": {
-      "description": "MD025/single-title/single-h1 - Multiple top-level headings in the same document",
+      "description": "MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md025.md",
       "type": [
         "boolean",
         "object"
@@ -765,6 +677,8 @@
         "level": {
           "description": "Heading level",
           "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
           "default": 1
         },
         "front_matter_title": {
@@ -776,7 +690,7 @@
       "additionalProperties": false
     },
     "MD026": {
-      "description": "MD026/no-trailing-punctuation - Trailing punctuation in heading",
+      "description": "MD026/no-trailing-punctuation : Trailing punctuation in heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md026.md",
       "type": [
         "boolean",
         "object"
@@ -792,7 +706,7 @@
       "additionalProperties": false
     },
     "no-trailing-punctuation": {
-      "description": "MD026/no-trailing-punctuation - Trailing punctuation in heading",
+      "description": "MD026/no-trailing-punctuation : Trailing punctuation in heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md026.md",
       "type": [
         "boolean",
         "object"
@@ -808,27 +722,27 @@
       "additionalProperties": false
     },
     "MD027": {
-      "description": "MD027/no-multiple-space-blockquote - Multiple spaces after blockquote symbol",
+      "description": "MD027/no-multiple-space-blockquote : Multiple spaces after blockquote symbol : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md027.md",
       "type": "boolean",
       "default": true
     },
     "no-multiple-space-blockquote": {
-      "description": "MD027/no-multiple-space-blockquote - Multiple spaces after blockquote symbol",
+      "description": "MD027/no-multiple-space-blockquote : Multiple spaces after blockquote symbol : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md027.md",
       "type": "boolean",
       "default": true
     },
     "MD028": {
-      "description": "MD028/no-blanks-blockquote - Blank line inside blockquote",
+      "description": "MD028/no-blanks-blockquote : Blank line inside blockquote : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md028.md",
       "type": "boolean",
       "default": true
     },
     "no-blanks-blockquote": {
-      "description": "MD028/no-blanks-blockquote - Blank line inside blockquote",
+      "description": "MD028/no-blanks-blockquote : Blank line inside blockquote : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md028.md",
       "type": "boolean",
       "default": true
     },
     "MD029": {
-      "description": "MD029/ol-prefix - Ordered list item prefix",
+      "description": "MD029/ol-prefix : Ordered list item prefix : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md029.md",
       "type": [
         "boolean",
         "object"
@@ -850,7 +764,7 @@
       "additionalProperties": false
     },
     "ol-prefix": {
-      "description": "MD029/ol-prefix - Ordered list item prefix",
+      "description": "MD029/ol-prefix : Ordered list item prefix : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md029.md",
       "type": [
         "boolean",
         "object"
@@ -872,7 +786,7 @@
       "additionalProperties": false
     },
     "MD030": {
-      "description": "MD030/list-marker-space - Spaces after list markers",
+      "description": "MD030/list-marker-space : Spaces after list markers : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md030.md",
       "type": [
         "boolean",
         "object"
@@ -882,28 +796,32 @@
         "ul_single": {
           "description": "Spaces for single-line unordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         },
         "ol_single": {
           "description": "Spaces for single-line ordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         },
         "ul_multi": {
           "description": "Spaces for multi-line unordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         },
         "ol_multi": {
           "description": "Spaces for multi-line ordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "list-marker-space": {
-      "description": "MD030/list-marker-space - Spaces after list markers",
+      "description": "MD030/list-marker-space : Spaces after list markers : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md030.md",
       "type": [
         "boolean",
         "object"
@@ -913,28 +831,32 @@
         "ul_single": {
           "description": "Spaces for single-line unordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         },
         "ol_single": {
           "description": "Spaces for single-line ordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         },
         "ul_multi": {
           "description": "Spaces for multi-line unordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         },
         "ol_multi": {
           "description": "Spaces for multi-line ordered list items",
           "type": "integer",
+          "minimum": 1,
           "default": 1
         }
       },
       "additionalProperties": false
     },
     "MD031": {
-      "description": "MD031/blanks-around-fences - Fenced code blocks should be surrounded by blank lines",
+      "description": "MD031/blanks-around-fences : Fenced code blocks should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md031.md",
       "type": [
         "boolean",
         "object"
@@ -950,7 +872,7 @@
       "additionalProperties": false
     },
     "blanks-around-fences": {
-      "description": "MD031/blanks-around-fences - Fenced code blocks should be surrounded by blank lines",
+      "description": "MD031/blanks-around-fences : Fenced code blocks should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md031.md",
       "type": [
         "boolean",
         "object"
@@ -966,17 +888,17 @@
       "additionalProperties": false
     },
     "MD032": {
-      "description": "MD032/blanks-around-lists - Lists should be surrounded by blank lines",
+      "description": "MD032/blanks-around-lists : Lists should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md032.md",
       "type": "boolean",
       "default": true
     },
     "blanks-around-lists": {
-      "description": "MD032/blanks-around-lists - Lists should be surrounded by blank lines",
+      "description": "MD032/blanks-around-lists : Lists should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md032.md",
       "type": "boolean",
       "default": true
     },
     "MD033": {
-      "description": "MD033/no-inline-html - Inline HTML",
+      "description": "MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md033.md",
       "type": [
         "boolean",
         "object"
@@ -995,7 +917,7 @@
       "additionalProperties": false
     },
     "no-inline-html": {
-      "description": "MD033/no-inline-html - Inline HTML",
+      "description": "MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md033.md",
       "type": [
         "boolean",
         "object"
@@ -1014,17 +936,17 @@
       "additionalProperties": false
     },
     "MD034": {
-      "description": "MD034/no-bare-urls - Bare URL used",
+      "description": "MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md034.md",
       "type": "boolean",
       "default": true
     },
     "no-bare-urls": {
-      "description": "MD034/no-bare-urls - Bare URL used",
+      "description": "MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md034.md",
       "type": "boolean",
       "default": true
     },
     "MD035": {
-      "description": "MD035/hr-style - Horizontal rule style",
+      "description": "MD035/hr-style : Horizontal rule style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md035.md",
       "type": [
         "boolean",
         "object"
@@ -1040,7 +962,7 @@
       "additionalProperties": false
     },
     "hr-style": {
-      "description": "MD035/hr-style - Horizontal rule style",
+      "description": "MD035/hr-style : Horizontal rule style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md035.md",
       "type": [
         "boolean",
         "object"
@@ -1056,7 +978,7 @@
       "additionalProperties": false
     },
     "MD036": {
-      "description": "MD036/no-emphasis-as-heading/no-emphasis-as-header - Emphasis used instead of a heading",
+      "description": "MD036/no-emphasis-as-heading : Emphasis used instead of a heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md036.md",
       "type": [
         "boolean",
         "object"
@@ -1072,23 +994,7 @@
       "additionalProperties": false
     },
     "no-emphasis-as-heading": {
-      "description": "MD036/no-emphasis-as-heading/no-emphasis-as-header - Emphasis used instead of a heading",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "punctuation": {
-          "description": "Punctuation characters",
-          "type": "string",
-          "default": ".,;:!?。，；：！？"
-        }
-      },
-      "additionalProperties": false
-    },
-    "no-emphasis-as-header": {
-      "description": "MD036/no-emphasis-as-heading/no-emphasis-as-header - Emphasis used instead of a heading",
+      "description": "MD036/no-emphasis-as-heading : Emphasis used instead of a heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md036.md",
       "type": [
         "boolean",
         "object"
@@ -1104,47 +1010,85 @@
       "additionalProperties": false
     },
     "MD037": {
-      "description": "MD037/no-space-in-emphasis - Spaces inside emphasis markers",
+      "description": "MD037/no-space-in-emphasis : Spaces inside emphasis markers : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md037.md",
       "type": "boolean",
       "default": true
     },
     "no-space-in-emphasis": {
-      "description": "MD037/no-space-in-emphasis - Spaces inside emphasis markers",
+      "description": "MD037/no-space-in-emphasis : Spaces inside emphasis markers : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md037.md",
       "type": "boolean",
       "default": true
     },
     "MD038": {
-      "description": "MD038/no-space-in-code - Spaces inside code span elements",
+      "description": "MD038/no-space-in-code : Spaces inside code span elements : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md038.md",
       "type": "boolean",
       "default": true
     },
     "no-space-in-code": {
-      "description": "MD038/no-space-in-code - Spaces inside code span elements",
+      "description": "MD038/no-space-in-code : Spaces inside code span elements : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md038.md",
       "type": "boolean",
       "default": true
     },
     "MD039": {
-      "description": "MD039/no-space-in-links - Spaces inside link text",
+      "description": "MD039/no-space-in-links : Spaces inside link text : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md039.md",
       "type": "boolean",
       "default": true
     },
     "no-space-in-links": {
-      "description": "MD039/no-space-in-links - Spaces inside link text",
+      "description": "MD039/no-space-in-links : Spaces inside link text : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md039.md",
       "type": "boolean",
       "default": true
     },
     "MD040": {
-      "description": "MD040/fenced-code-language - Fenced code blocks should have a language specified",
-      "type": "boolean",
-      "default": true
+      "description": "MD040/fenced-code-language : Fenced code blocks should have a language specified : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md040.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "allowed_languages": {
+          "description": "List of languages",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "language_only": {
+          "description": "Require language only",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
     },
     "fenced-code-language": {
-      "description": "MD040/fenced-code-language - Fenced code blocks should have a language specified",
-      "type": "boolean",
-      "default": true
+      "description": "MD040/fenced-code-language : Fenced code blocks should have a language specified : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md040.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "allowed_languages": {
+          "description": "List of languages",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "language_only": {
+          "description": "Require language only",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
     },
     "MD041": {
-      "description": "MD041/first-line-heading/first-line-h1 - First line in a file should be a top-level heading",
+      "description": "MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md041.md",
       "type": [
         "boolean",
         "object"
@@ -1154,6 +1098,8 @@
         "level": {
           "description": "Heading level",
           "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
           "default": 1
         },
         "front_matter_title": {
@@ -1165,7 +1111,7 @@
       "additionalProperties": false
     },
     "first-line-heading": {
-      "description": "MD041/first-line-heading/first-line-h1 - First line in a file should be a top-level heading",
+      "description": "MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md041.md",
       "type": [
         "boolean",
         "object"
@@ -1175,6 +1121,8 @@
         "level": {
           "description": "Heading level",
           "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
           "default": 1
         },
         "front_matter_title": {
@@ -1186,7 +1134,7 @@
       "additionalProperties": false
     },
     "first-line-h1": {
-      "description": "MD041/first-line-heading/first-line-h1 - First line in a file should be a top-level heading",
+      "description": "MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md041.md",
       "type": [
         "boolean",
         "object"
@@ -1196,6 +1144,8 @@
         "level": {
           "description": "Heading level",
           "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
           "default": 1
         },
         "front_matter_title": {
@@ -1207,17 +1157,17 @@
       "additionalProperties": false
     },
     "MD042": {
-      "description": "MD042/no-empty-links - No empty links",
+      "description": "MD042/no-empty-links : No empty links : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md042.md",
       "type": "boolean",
       "default": true
     },
     "no-empty-links": {
-      "description": "MD042/no-empty-links - No empty links",
+      "description": "MD042/no-empty-links : No empty links : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md042.md",
       "type": "boolean",
       "default": true
     },
     "MD043": {
-      "description": "MD043/required-headings/required-headers - Required heading structure",
+      "description": "MD043/required-headings : Required heading structure : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md043.md",
       "type": [
         "boolean",
         "object"
@@ -1228,23 +1178,21 @@
           "description": "List of headings",
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^(\\*|\\+|#{1,6} .*)$"
           },
           "default": []
         },
-        "headers": {
-          "description": "List of headings",
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": []
+        "match_case": {
+          "description": "Match case of headings",
+          "type": "boolean",
+          "default": false
         }
       },
       "additionalProperties": false
     },
     "required-headings": {
-      "description": "MD043/required-headings/required-headers - Required heading structure",
+      "description": "MD043/required-headings : Required heading structure : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md043.md",
       "type": [
         "boolean",
         "object"
@@ -1255,50 +1203,21 @@
           "description": "List of headings",
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^(\\*|\\+|#{1,6} .*)$"
           },
           "default": []
         },
-        "headers": {
-          "description": "List of headings",
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": []
-        }
-      },
-      "additionalProperties": false
-    },
-    "required-headers": {
-      "description": "MD043/required-headings/required-headers - Required heading structure",
-      "type": [
-        "boolean",
-        "object"
-      ],
-      "default": true,
-      "properties": {
-        "headings": {
-          "description": "List of headings",
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": []
-        },
-        "headers": {
-          "description": "List of headings",
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": []
+        "match_case": {
+          "description": "Match case of headings",
+          "type": "boolean",
+          "default": false
         }
       },
       "additionalProperties": false
     },
     "MD044": {
-      "description": "MD044/proper-names - Proper names should have the correct capitalization",
+      "description": "MD044/proper-names : Proper names should have the correct capitalization : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md044.md",
       "type": [
         "boolean",
         "object"
@@ -1315,6 +1234,11 @@
         },
         "code_blocks": {
           "description": "Include code blocks",
+          "type": "boolean",
+          "default": true
+        },
+        "html_elements": {
+          "description": "Include HTML elements",
           "type": "boolean",
           "default": true
         }
@@ -1322,7 +1246,7 @@
       "additionalProperties": false
     },
     "proper-names": {
-      "description": "MD044/proper-names - Proper names should have the correct capitalization",
+      "description": "MD044/proper-names : Proper names should have the correct capitalization : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md044.md",
       "type": [
         "boolean",
         "object"
@@ -1341,22 +1265,27 @@
           "description": "Include code blocks",
           "type": "boolean",
           "default": true
+        },
+        "html_elements": {
+          "description": "Include HTML elements",
+          "type": "boolean",
+          "default": true
         }
       },
       "additionalProperties": false
     },
     "MD045": {
-      "description": "MD045/no-alt-text - Images should have alternate text (alt text)",
+      "description": "MD045/no-alt-text : Images should have alternate text (alt text) : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md045.md",
       "type": "boolean",
       "default": true
     },
     "no-alt-text": {
-      "description": "MD045/no-alt-text - Images should have alternate text (alt text)",
+      "description": "MD045/no-alt-text : Images should have alternate text (alt text) : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md045.md",
       "type": "boolean",
       "default": true
     },
     "MD046": {
-      "description": "MD046/code-block-style - Code block style",
+      "description": "MD046/code-block-style : Code block style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md046.md",
       "type": [
         "boolean",
         "object"
@@ -1377,7 +1306,7 @@
       "additionalProperties": false
     },
     "code-block-style": {
-      "description": "MD046/code-block-style - Code block style",
+      "description": "MD046/code-block-style : Code block style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md046.md",
       "type": [
         "boolean",
         "object"
@@ -1398,17 +1327,17 @@
       "additionalProperties": false
     },
     "MD047": {
-      "description": "MD047/single-trailing-newline - Files should end with a single newline character",
+      "description": "MD047/single-trailing-newline : Files should end with a single newline character : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md047.md",
       "type": "boolean",
       "default": true
     },
     "single-trailing-newline": {
-      "description": "MD047/single-trailing-newline - Files should end with a single newline character",
+      "description": "MD047/single-trailing-newline : Files should end with a single newline character : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md047.md",
       "type": "boolean",
       "default": true
     },
     "MD048": {
-      "description": "MD048/code-fence-style - Code fence style",
+      "description": "MD048/code-fence-style : Code fence style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md048.md",
       "type": [
         "boolean",
         "object"
@@ -1429,7 +1358,7 @@
       "additionalProperties": false
     },
     "code-fence-style": {
-      "description": "MD048/code-fence-style - Code fence style",
+      "description": "MD048/code-fence-style : Code fence style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md048.md",
       "type": [
         "boolean",
         "object"
@@ -1450,7 +1379,7 @@
       "additionalProperties": false
     },
     "MD049": {
-      "description": "MD049/emphasis-style - Emphasis style should be consistent",
+      "description": "MD049/emphasis-style : Emphasis style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md049.md",
       "type": [
         "boolean",
         "object"
@@ -1458,7 +1387,7 @@
       "default": true,
       "properties": {
         "style": {
-          "description": "Emphasis style should be consistent",
+          "description": "Emphasis style",
           "type": "string",
           "enum": [
             "consistent",
@@ -1471,7 +1400,7 @@
       "additionalProperties": false
     },
     "emphasis-style": {
-      "description": "MD049/emphasis-style - Emphasis style should be consistent",
+      "description": "MD049/emphasis-style : Emphasis style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md049.md",
       "type": [
         "boolean",
         "object"
@@ -1479,7 +1408,7 @@
       "default": true,
       "properties": {
         "style": {
-          "description": "Emphasis style should be consistent",
+          "description": "Emphasis style",
           "type": "string",
           "enum": [
             "consistent",
@@ -1492,7 +1421,7 @@
       "additionalProperties": false
     },
     "MD050": {
-      "description": "MD050/strong-style - Strong style should be consistent",
+      "description": "MD050/strong-style : Strong style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md050.md",
       "type": [
         "boolean",
         "object"
@@ -1500,7 +1429,7 @@
       "default": true,
       "properties": {
         "style": {
-          "description": "Strong style should be consistent",
+          "description": "Strong style",
           "type": "string",
           "enum": [
             "consistent",
@@ -1513,7 +1442,7 @@
       "additionalProperties": false
     },
     "strong-style": {
-      "description": "MD050/strong-style - Strong style should be consistent",
+      "description": "MD050/strong-style : Strong style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md050.md",
       "type": [
         "boolean",
         "object"
@@ -1521,7 +1450,7 @@
       "default": true,
       "properties": {
         "style": {
-          "description": "Strong style should be consistent",
+          "description": "Strong style",
           "type": "string",
           "enum": [
             "consistent",
@@ -1533,123 +1462,377 @@
       },
       "additionalProperties": false
     },
-    "headings": {
-      "description": "headings - MD001, MD002, MD003, MD018, MD019, MD020, MD021, MD022, MD023, MD024, MD025, MD026, MD036, MD041, MD043",
+    "MD051": {
+      "description": "MD051/link-fragments : Link fragments should be valid : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md051.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "ignore_case": {
+          "description": "Ignore case of fragments",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "link-fragments": {
+      "description": "MD051/link-fragments : Link fragments should be valid : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md051.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "ignore_case": {
+          "description": "Ignore case of fragments",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "MD052": {
+      "description": "MD052/reference-links-images : Reference links and images should use a label that is defined : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md052.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "shortcut_syntax": {
+          "description": "Include shortcut syntax",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "reference-links-images": {
+      "description": "MD052/reference-links-images : Reference links and images should use a label that is defined : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md052.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "shortcut_syntax": {
+          "description": "Include shortcut syntax",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "MD053": {
+      "description": "MD053/link-image-reference-definitions : Link and image reference definitions should be needed : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md053.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "ignored_definitions": {
+          "description": "Ignored definitions",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "//"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "link-image-reference-definitions": {
+      "description": "MD053/link-image-reference-definitions : Link and image reference definitions should be needed : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md053.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "ignored_definitions": {
+          "description": "Ignored definitions",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "//"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "MD054": {
+      "description": "MD054/link-image-style : Link and image style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md054.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "autolink": {
+          "description": "Allow autolinks",
+          "type": "boolean",
+          "default": true
+        },
+        "inline": {
+          "description": "Allow inline links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "full": {
+          "description": "Allow full reference links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "collapsed": {
+          "description": "Allow collapsed reference links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "shortcut": {
+          "description": "Allow shortcut reference links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "url_inline": {
+          "description": "Allow URLs as inline links",
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "link-image-style": {
+      "description": "MD054/link-image-style : Link and image style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md054.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "autolink": {
+          "description": "Allow autolinks",
+          "type": "boolean",
+          "default": true
+        },
+        "inline": {
+          "description": "Allow inline links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "full": {
+          "description": "Allow full reference links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "collapsed": {
+          "description": "Allow collapsed reference links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "shortcut": {
+          "description": "Allow shortcut reference links and images",
+          "type": "boolean",
+          "default": true
+        },
+        "url_inline": {
+          "description": "Allow URLs as inline links",
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "MD055": {
+      "description": "MD055/table-pipe-style : Table pipe style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md055.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "style": {
+          "description": "Table pipe style",
+          "type": "string",
+          "enum": [
+            "consistent",
+            "leading_only",
+            "trailing_only",
+            "leading_and_trailing",
+            "no_leading_or_trailing"
+          ],
+          "default": "consistent"
+        }
+      },
+      "additionalProperties": false
+    },
+    "table-pipe-style": {
+      "description": "MD055/table-pipe-style : Table pipe style : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md055.md",
+      "type": [
+        "boolean",
+        "object"
+      ],
+      "default": true,
+      "properties": {
+        "style": {
+          "description": "Table pipe style",
+          "type": "string",
+          "enum": [
+            "consistent",
+            "leading_only",
+            "trailing_only",
+            "leading_and_trailing",
+            "no_leading_or_trailing"
+          ],
+          "default": "consistent"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MD056": {
+      "description": "MD056/table-column-count : Table column count : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md056.md",
       "type": "boolean",
       "default": true
     },
-    "headers": {
-      "description": "headers - MD001, MD002, MD003, MD018, MD019, MD020, MD021, MD022, MD023, MD024, MD025, MD026, MD036, MD041, MD043",
+    "table-column-count": {
+      "description": "MD056/table-column-count : Table column count : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md056.md",
+      "type": "boolean",
+      "default": true
+    },
+    "MD058": {
+      "description": "MD058/blanks-around-tables : Tables should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md058.md",
+      "type": "boolean",
+      "default": true
+    },
+    "blanks-around-tables": {
+      "description": "MD058/blanks-around-tables : Tables should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md058.md",
+      "type": "boolean",
+      "default": true
+    },
+    "headings": {
+      "description": "headings : MD001, MD003, MD018, MD019, MD020, MD021, MD022, MD023, MD024, MD025, MD026, MD036, MD041, MD043",
       "type": "boolean",
       "default": true
     },
     "bullet": {
-      "description": "bullet - MD004, MD005, MD006, MD007, MD032",
+      "description": "bullet : MD004, MD005, MD007, MD032",
       "type": "boolean",
       "default": true
     },
     "ul": {
-      "description": "ul - MD004, MD005, MD006, MD007, MD030, MD032",
+      "description": "ul : MD004, MD005, MD007, MD030, MD032",
       "type": "boolean",
       "default": true
     },
     "indentation": {
-      "description": "indentation - MD005, MD006, MD007, MD027",
+      "description": "indentation : MD005, MD007, MD027",
       "type": "boolean",
       "default": true
     },
     "whitespace": {
-      "description": "whitespace - MD009, MD010, MD012, MD027, MD028, MD030, MD037, MD038, MD039",
+      "description": "whitespace : MD009, MD010, MD012, MD027, MD028, MD030, MD037, MD038, MD039",
       "type": "boolean",
       "default": true
     },
     "hard_tab": {
-      "description": "hard_tab - MD010",
+      "description": "hard_tab : MD010",
       "type": "boolean",
       "default": true
     },
     "links": {
-      "description": "links - MD011, MD034, MD039, MD042",
+      "description": "links : MD011, MD034, MD039, MD042, MD051, MD052, MD053, MD054",
       "type": "boolean",
       "default": true
     },
     "blank_lines": {
-      "description": "blank_lines - MD012, MD022, MD031, MD032, MD047",
+      "description": "blank_lines : MD012, MD022, MD031, MD032, MD047",
       "type": "boolean",
       "default": true
     },
     "line_length": {
-      "description": "line_length - MD013",
+      "description": "line_length : MD013",
       "type": "boolean",
       "default": true
     },
     "code": {
-      "description": "code - MD014, MD031, MD038, MD040, MD046, MD048",
+      "description": "code : MD014, MD031, MD038, MD040, MD046, MD048",
       "type": "boolean",
       "default": true
     },
     "atx": {
-      "description": "atx - MD018, MD019",
+      "description": "atx : MD018, MD019",
       "type": "boolean",
       "default": true
     },
     "spaces": {
-      "description": "spaces - MD018, MD019, MD020, MD021, MD023",
+      "description": "spaces : MD018, MD019, MD020, MD021, MD023",
       "type": "boolean",
       "default": true
     },
     "atx_closed": {
-      "description": "atx_closed - MD020, MD021",
+      "description": "atx_closed : MD020, MD021",
       "type": "boolean",
       "default": true
     },
     "blockquote": {
-      "description": "blockquote - MD027, MD028",
+      "description": "blockquote : MD027, MD028",
       "type": "boolean",
       "default": true
     },
     "ol": {
-      "description": "ol - MD029, MD030, MD032",
+      "description": "ol : MD029, MD030, MD032",
       "type": "boolean",
       "default": true
     },
     "html": {
-      "description": "html - MD033",
+      "description": "html : MD033",
       "type": "boolean",
       "default": true
     },
     "url": {
-      "description": "url - MD034",
+      "description": "url : MD034",
       "type": "boolean",
       "default": true
     },
     "hr": {
-      "description": "hr - MD035",
+      "description": "hr : MD035",
       "type": "boolean",
       "default": true
     },
     "emphasis": {
-      "description": "emphasis - MD036, MD037, MD049, MD050",
+      "description": "emphasis : MD036, MD037, MD049, MD050",
       "type": "boolean",
       "default": true
     },
     "language": {
-      "description": "language - MD040",
+      "description": "language : MD040",
       "type": "boolean",
       "default": true
     },
     "spelling": {
-      "description": "spelling - MD044",
+      "description": "spelling : MD044",
       "type": "boolean",
       "default": true
     },
     "accessibility": {
-      "description": "accessibility - MD045",
+      "description": "accessibility : MD045",
       "type": "boolean",
       "default": true
     },
     "images": {
-      "description": "images - MD045",
+      "description": "images : MD045, MD052, MD053, MD054",
+      "type": "boolean",
+      "default": true
+    },
+    "table": {
+      "description": "table : MD055, MD056, MD058",
       "type": "boolean",
       "default": true
     }

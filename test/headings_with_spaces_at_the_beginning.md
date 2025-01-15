@@ -16,5 +16,10 @@ Some text
   ```
 
 * This is another case where MD023 shouldn't be triggered
-  # Test {MD022} {MD023} Valid heading for CommonMark (see section 5.2)
+  # Test {MD022} Valid heading for CommonMark (see section 5.2)
     # Test {MD022} {MD023} Also valid heading for CommonMark
+
+<!-- markdownlint-configure-file {
+  "heading-style": false,
+  "first-line-heading": false
+} -->

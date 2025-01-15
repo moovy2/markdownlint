@@ -78,19 +78,19 @@ Text [link](https://example.com/link`link`link`link) text `code`.
 
 Text [link](https://example.com/link "title`title") text `code`.
 
-Text [link](#link`link) text `code`.
+Text [link](#link`link) text `code`. {MD051}
 
 Text [link] (#link`link) text `code`. {MD038}
 
-Text [link[link](#link`link) text `code`.
+Text [link[link](#link`link) text `code`. {MD051}
 
-Text [link(link](#link`link) text `code`.
+Text [link(link](#link`link) text `code`. {MD051}
 
-Text [link)link](#link`link) text `code`.
+Text [link)link](#link`link) text `code`. {MD051}
 
-Text [link](#link[link`link) text `code`.
+Text [link](#link[link`link) text `code`. {MD051}
 
-Text [link](#link]link`link) text `code`.
+Text [link](#link]link`link) text `code`. {MD051}
 
 Text [link](#link(link`link) text `code`. {MD038}
 
@@ -122,3 +122,47 @@ Again, 3 characters: ` abc `
 Again, 2 characters: ` ab `
 Again, 1 character: ` a `
 Many internal spaces: ` code code  code   code    code     code `
+
+text ``` ` leading space
+allowed for backtick``` text
+
+text ```  ` multiple leading {MD038}
+spaces not allowed``` text
+
+text ``trailing space
+allowed for backtick ` `` text
+
+text ``multiple trailing spaces
+not allowed `  `` text {MD038}
+
+text `` ` leading and trailing
+space allowed for backtick ` `` text
+
+<!-- markdownlint-disable blanks-around-fences fenced-code-language -->
+
+Text
+```
+Code
+```
+
+Text
+    ```
+    Code
+    ```
+
+Text
+    ```
+Code
+    ```
+
+Text
+    ```
+    Code
+    ```
+Text
+
+Text
+    ```
+Code
+    ```
+Text

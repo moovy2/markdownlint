@@ -109,8 +109,10 @@ text
 
 Text `code <element> code` text
 
+Text `code <element ` `attribute="value"/> code` text {MD038}
+
 ```lang
-code {MD046:112}
+code {MD046:114}
 
 <element>
 ```
@@ -118,3 +120,14 @@ code {MD046:112}
 Text `code <element> code` text
 
 Text <element> text {MD033}
+
+A [<link-with>][a-reference] is problematic. {MD033}
+
+A [link with][a-<reference>] is okay.
+
+A link with [a-<reference>][] is problematic. {MD033}
+
+A link with [a-<reference>] is problematic. {MD033}
+
+[a-reference]: https://example.com/
+[a-<reference>]: https://example.com/

@@ -7,3 +7,7 @@ title: embedded
 ---
 
 Text text text
+
+<!-- markdownlint-configure-file {
+  "first-line-heading": false
+} -->
